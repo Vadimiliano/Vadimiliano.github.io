@@ -8,7 +8,7 @@
 <meta property="og:title" content="Вадим Гайдаржи — Junior Frontend-разработчик">
 <meta property="og:description" content="React, TypeScript, Next.js. Проекты, видео-демо и резюме.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/poster.jpg">
+<meta property="og:image" content="assets/poster-shoe.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" rel="stylesheet">
@@ -77,7 +77,7 @@ h1 {
 .player { border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--graphite); margin: 0; }
 .player .bar { display: flex; align-items: center; gap: 10px; padding: 9px 16px; color: #aeb3b7; font-size: 0.875rem; background: #2a2d30; }
 .player .bar::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--accent-on-graphite); }
-.player video { display: block; width: 100%; height: auto; aspect-ratio: 2940 / 1550; background: #000; }
+.player video { display: block; width: 100%; height: auto; background: #000; }
 .player figcaption { padding: 12px 16px; color: #aeb3b7; font-size: 0.9rem; background: #2a2d30; border-top: 1px solid #3a3e42; }
 
 section { margin-top: 96px; scroll-margin-top: 32px; }
@@ -85,6 +85,7 @@ h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.3rem; marg
 h3 { font-family: var(--font-display); font-weight: 500; font-size: 1.1rem; margin: 0 0 4px; }
 .meta { color: var(--muted); margin: 0 0 16px; }
 
+.project .player { margin: 0 0 28px; }
 .project { padding: 32px 0; border-top: 1px solid var(--line); }
 .project:first-of-type { border-top: 0; padding-top: 0; }
 .project-body { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 32px 48px; }
@@ -145,32 +146,10 @@ dl.rows.langs { margin-top: 28px; }
     <h1><span data-l="ru">Делаю интерфейсы на React и TypeScript и подключаю их к API</span><span data-l="en">I build interfaces in React and TypeScript and connect them to APIs</span></h1>
     <p class="lead"><span data-l="ru">Ищу первую команду для роста в коммерческой разработке. Готов работать удалённо из любой локации.</span><span data-l="en">Looking for a first team to grow in commercial development. Open to remote work from any location.</span></p>
 
-    <figure class="player">
-      <div class="bar">Fabiomanager</div>
-      <video controls preload="metadata" playsinline poster="assets/poster.jpg">
-        <source src="assets/fabiomanager-demo.mp4" type="video/mp4">
-        <span data-l="ru">Ваш браузер не поддерживает видео.</span><span data-l="en">Your browser does not support video.</span>
-      </video>
-      <figcaption><span data-l="ru">Запись работы приложения Fabiomanager: складской учёт и заказы для ООО «ФАБИОБРУНО».</span><span data-l="en">A recording of the Fabiomanager app, about 8 minutes: warehouse and order management for a manufacturing company.</span></figcaption>
-    </figure>
+    <figure class="player"><div class="bar">SHOE-STORE</div><video controls preload="metadata" playsinline poster="assets/poster-shoe.jpg" style="aspect-ratio: 2592 / 1624"><source src="assets/shoe-store-demo.mp4" type="video/mp4"><span data-l="ru">Ваш браузер не поддерживает видео.</span><span data-l="en">Your browser does not support video.</span></video><figcaption><span data-l="ru">Запись работы SHOE-STORE, около минуты: каталог, фильтры и поиск, корзина, админ-панель.</span><span data-l="en">A recording of SHOE-STORE, about a minute: catalog, filters and search, cart, admin panel.</span></figcaption></figure>
 
     <section id="projects">
       <h2><span data-l="ru">Проекты</span><span data-l="en">Projects</span></h2>
-
-      <article class="project">
-        <h3>Fabiomanager</h3>
-        <p class="meta"><span data-l="ru">Складской учёт и управление заказами для ООО «ФАБИОБРУНО», 2025, дипломный проект</span><span data-l="en">Warehouse and order management for a manufacturing company, 2025, graduation project</span></p>
-        <div class="project-body">
-          <div>
-            <p><span data-l="ru">Единая система для фабрики вместо учёта в электронных таблицах и бумажных журналах.</span><span data-l="en">A single system for a factory replacing spreadsheets and paper logs.</span></p>
-            <ul><li><span data-l="ru">Реализовал SPA на React с тремя ролями (администратор, менеджер, сотрудник): интерфейс и доступные действия меняются в зависимости от роли.</span><span data-l="en">Built a React SPA with three roles (admin, manager, employee): the interface and available actions change with the role.</span></li><li><span data-l="ru">Сделал страницы авторизации, дашборда с диаграммами, материалов, заказов, задач, пользователей и профиля; поиск, сортировка, добавление, редактирование и удаление через модальные окна.</span><span data-l="en">Implemented pages for login, a dashboard with charts, materials, orders, tasks, users and a profile; search, sorting, and create, edit and delete flows through modal forms.</span></li><li><span data-l="ru">Ускорил загрузку дашборда параллельными запросами к API (Promise.all); реализовал правило: заказ нельзя завершить, пока по нему есть невыполненные задачи.</span><span data-l="en">Sped up dashboard loading with parallel API requests (Promise.all); implemented a rule that blocks completing an order while it has unfinished tasks.</span></li><li><span data-l="ru">Написал REST API на FastAPI (заказы, материалы, задачи, пользователи, аналитика) с JWT-авторизацией и проверкой ролей, спроектировал схему PostgreSQL.</span><span data-l="en">Wrote a REST API with FastAPI (orders, materials, tasks, users, analytics) with JWT authentication and role checks, and designed the PostgreSQL schema.</span></li><li><span data-l="ru">Прототипировал интерфейс в Figma, согласовывал макеты с заказчиком и вносил правки по его обратной связи.</span><span data-l="en">Prototyped the UI in Figma, agreed the mockups with the client and applied their feedback.</span></li></ul>
-          </div>
-          <div class="stack">
-            <h4><span data-l="ru">Стек</span><span data-l="en">Stack</span></h4>
-            <p>React (JavaScript), React Router, Axios, Recharts, FastAPI, PostgreSQL, JWT, Figma</p>
-          </div>
-        </div>
-      </article>
 
       <article class="project">
         <h3>SHOE-STORE</h3>
@@ -181,6 +160,22 @@ dl.rows.langs { margin-top: 28px; }
             <h4><span data-l="ru">Стек</span><span data-l="en">Stack</span></h4>
             <p>Next.js (App Router), TypeScript, Tailwind CSS, Prisma, JWT</p>
             <a href="https://github.com/Vadimiliano"><span data-l="ru">Код на GitHub</span><span data-l="en">Code on GitHub</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <h3>Fabiomanager</h3>
+        <p class="meta"><span data-l="ru">Складской учёт и управление заказами для ООО «ФАБИОБРУНО», 2025, дипломный проект</span><span data-l="en">Warehouse and order management for a manufacturing company, 2025, graduation project</span></p>
+        <figure class="player"><div class="bar">Fabiomanager</div><video controls preload="metadata" playsinline poster="assets/poster.jpg" style="aspect-ratio: 2940 / 1550"><source src="assets/fabiomanager-demo.mp4" type="video/mp4"><span data-l="ru">Ваш браузер не поддерживает видео.</span><span data-l="en">Your browser does not support video.</span></video><figcaption><span data-l="ru">Запись работы Fabiomanager, около 8 минут.</span><span data-l="en">A recording of Fabiomanager, about 8 minutes.</span></figcaption></figure>
+        <div class="project-body">
+          <div>
+            <p><span data-l="ru">Единая система для фабрики вместо учёта в электронных таблицах и бумажных журналах.</span><span data-l="en">A single system for a factory replacing spreadsheets and paper logs.</span></p>
+            <ul><li><span data-l="ru">Реализовал SPA на React с тремя ролями (администратор, менеджер, сотрудник): интерфейс и доступные действия меняются в зависимости от роли.</span><span data-l="en">Built a React SPA with three roles (admin, manager, employee): the interface and available actions change with the role.</span></li><li><span data-l="ru">Сделал страницы авторизации, дашборда с диаграммами, материалов, заказов, задач, пользователей и профиля; поиск, сортировка, добавление, редактирование и удаление через модальные окна.</span><span data-l="en">Implemented pages for login, a dashboard with charts, materials, orders, tasks, users and a profile; search, sorting, and create, edit and delete flows through modal forms.</span></li><li><span data-l="ru">Ускорил загрузку дашборда параллельными запросами к API (Promise.all); реализовал правило: заказ нельзя завершить, пока по нему есть невыполненные задачи.</span><span data-l="en">Sped up dashboard loading with parallel API requests (Promise.all); implemented a rule that blocks completing an order while it has unfinished tasks.</span></li><li><span data-l="ru">Написал REST API на FastAPI (заказы, материалы, задачи, пользователи, аналитика) с JWT-авторизацией и проверкой ролей, спроектировал схему PostgreSQL.</span><span data-l="en">Wrote a REST API with FastAPI (orders, materials, tasks, users, analytics) with JWT authentication and role checks, and designed the PostgreSQL schema.</span></li><li><span data-l="ru">Прототипировал интерфейс в Figma, согласовывал макеты с заказчиком и вносил правки по его обратной связи.</span><span data-l="en">Prototyped the UI in Figma, agreed the mockups with the client and applied their feedback.</span></li></ul>
+          </div>
+          <div class="stack">
+            <h4><span data-l="ru">Стек</span><span data-l="en">Stack</span></h4>
+            <p>React (JavaScript), React Router, Axios, Recharts, FastAPI, PostgreSQL, JWT, Figma</p>
           </div>
         </div>
       </article>
